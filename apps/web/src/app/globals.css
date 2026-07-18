@@ -1,0 +1,189 @@
+@import 'tailwindcss';
+
+@theme {
+  /* =========================
+     BRAND (Royal Purple)
+  ========================= */
+
+  --color-brand-50: #faf7ff;
+  --color-brand-100: #f3edff;
+  --color-brand-200: #e7dbff;
+  --color-brand-300: #d3b8ff;
+  --color-brand-400: #b985ff;
+  --color-brand-500: #8b5cf6;
+  --color-brand-600: #6d28d9;
+  --color-brand-700: #5b21b6;
+  --color-brand-800: #4c1d95;
+  --color-brand-900: #31165d;
+  --color-brand-950: #1c1333;
+
+  /* =========================
+     ACCENT (Purple + Pink)
+  ========================= */
+
+  --color-accent-300: #f9a8d4;
+  --color-accent-400: #f472b6;
+  --color-accent-500: #ec4899;
+  --color-accent-600: #db2777;
+
+  /* =========================
+     SURFACE COLORS
+  ========================= */
+
+  --color-surface-50: #fcfbff;
+  --color-surface-100: #f7f4ff;
+  --color-surface-200: #efeaff;
+  --color-surface-300: #ddd6fe;
+  --color-surface-400: #b7afd4;
+  --color-surface-500: #7d7a91;
+  --color-surface-600: #605d70;
+  --color-surface-700: #464257;
+  --color-surface-800: #2d293d;
+  --color-surface-900: #191626;
+  --color-surface-950: #0d0a17;
+
+  /* =========================
+     FONTS
+  ========================= */
+
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+
+  /* =========================
+     RADIUS
+  ========================= */
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+
+  /* =========================
+     SHADOWS
+  ========================= */
+
+  --shadow-glass: 0 10px 35px rgba(91, 33, 182, .08);
+
+  --shadow-elevated: 0 20px 70px rgba(91, 33, 182, .12);
+
+  --shadow-glow: 0 0 45px rgba(109, 40, 217, .22);
+}
+
+/* =========================
+   BASE
+========================= */
+
+@layer base {
+
+*,
+*::before,
+*::after{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+-webkit-font-smoothing:antialiased;
+-moz-osx-font-smoothing:grayscale;
+}
+
+body{
+@apply bg-surface-50 text-surface-900 font-sans;
+font-feature-settings:'cv02','cv03','cv04','cv11';
+background:
+radial-gradient(circle at top right,
+rgba(139,92,246,.12),
+transparent 38%),
+radial-gradient(circle at bottom left,
+rgba(244,114,182,.08),
+transparent 35%),
+#fcfbff;
+}
+
+:focus-visible{
+@apply outline-2 outline-offset-2 outline-brand-600;
+}
+
+::selection{
+background:#c4b5fd;
+color:#1c1333;
+}
+
+}
+
+/* =========================
+   UTILITIES
+========================= */
+
+@layer utilities {
+
+.glass{
+background:rgba(255,255,255,.78);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.6);
+box-shadow:var(--shadow-glass);
+}
+
+.glass-dark{
+background:rgba(28,19,51,.85);
+backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,.08);
+box-shadow:var(--shadow-glass);
+}
+
+.gradient-brand{
+background:linear-gradient(
+135deg,
+#5b21b6 0%,
+#7c3aed 45%,
+#ec4899 100%);
+}
+
+.gradient-mesh{
+background:
+
+radial-gradient(
+circle at 15% 20%,
+rgba(139,92,246,.18),
+transparent 35%),
+
+radial-gradient(
+circle at 85% 10%,
+rgba(236,72,153,.12),
+transparent 30%),
+
+radial-gradient(
+circle at 60% 90%,
+rgba(109,40,217,.10),
+transparent 35%),
+
+#fcfbff;
+}
+
+.text-gradient{
+background:linear-gradient(
+135deg,
+#5b21b6,
+#7c3aed,
+#ec4899);
+
+-webkit-background-clip:text;
+background-clip:text;
+color:transparent;
+}
+
+.container-narrow{
+@apply mx-auto w-full max-w-5xl px-6;
+}
+
+.container-wide{
+@apply mx-auto w-full max-w-7xl px-6 lg:px-8;
+}
+
+.section-padding{
+@apply py-20 md:py-28 lg:py-32;
+}
+
+}
