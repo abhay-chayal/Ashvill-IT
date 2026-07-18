@@ -122,8 +122,9 @@ color:#1c1333;
 .glass{
 background:rgba(255,255,255,.78);
 backdrop-filter:blur(20px);
-border:1px solid rgba(255,255,255,.6);
-box-shadow:var(--shadow-glass);
+border: 0px solid transparent !important;
+outline: none !important;
+box-shadow: none !important;
 }
 
 .glass-dark{
