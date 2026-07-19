@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { PageLayout, PageHero, CTASection } from '@/components/layout/PageLayout';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { Card } from '@/components/ui/Card';
@@ -15,13 +14,13 @@ export const metadata = createMetadata({
 export default function AboutPage() {
   return (
     <PageLayout>
-      <PageHero
+      <PageHero pattern
         eyebrow="About Us"
-        title="Eight Years of Engineering Excellence"
+        title="A Decade of Engineering Excellence"
         description={`${company.name} is a global IT services company headquartered in ${company.headquarters}, delivering transformative technology solutions to enterprise clients worldwide.`}
       />
 
-      <section className="pb-20">
+      <section className="py-12 md:py-20">
         <div className="container-wide">
           <Breadcrumbs items={[{ label: 'About' }]} />
 

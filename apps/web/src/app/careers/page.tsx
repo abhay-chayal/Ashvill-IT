@@ -16,8 +16,8 @@ export const metadata = createMetadata({
 export default function CareersPage() {
   return (
     <PageLayout>
-      <PageHero eyebrow="Careers" title="Build the Future With Us" description="Join a team of 45+ passionate technologists delivering transformative solutions for global enterprises." />
-      <section className="pb-20">
+      <PageHero pattern eyebrow="Careers" title="Build the Future With Us" description="Join a team of 45+ passionate technologists delivering transformative solutions for global enterprises." />
+      <section className="py-12 md:py-11">
         <div className="container-wide">
           <Breadcrumbs items={[{ label: 'Careers' }]} />
           <StaggerContainer className="space-y-4">

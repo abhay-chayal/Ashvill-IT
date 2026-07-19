@@ -17,7 +17,7 @@ export default function ContactPage() {
   return (
     <PageLayout>
       <PageHero eyebrow="Contact" title="Let's Start a Conversation" description="Tell us about your project and our team will respond within one business day." />
-      <section className="pb-20">
+      <section className="py-12 md:py-11">
         <div className="container-wide">
           <Breadcrumbs items={[{ label: 'Contact' }]} />
           <div className="grid gap-12 lg:grid-cols-5">

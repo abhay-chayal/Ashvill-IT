@@ -8,6 +8,7 @@ export interface CaseStudy {
   solution: string;
   results: string[];
   technologies: string[];
+  image: string;
 }
 
 export const caseStudies: CaseStudy[] = [
@@ -21,6 +22,7 @@ export const caseStudies: CaseStudy[] = [
     solution: 'Ashvill executed a strangler fig migration to cloud-native microservices on AWS, implementing event-driven architecture with real-time compliance reporting.',
     results: ['60% faster transaction processing', '45% reduction in infrastructure costs', '99.99% uptime achieved', '3 new product lines launched within 6 months'],
     technologies: ['AWS', 'Kubernetes', 'Node.js', 'PostgreSQL', 'Kafka', 'Terraform'],
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80',
   },
   {
     slug: 'healthcare-ai-diagnostics',
@@ -32,6 +34,7 @@ export const caseStudies: CaseStudy[] = [
     solution: 'Built an ML-powered diagnostic assistance platform integrated with hospital EMR systems, providing real-time clinical decision support.',
     results: ['92% diagnostic accuracy improvement', '35% reduction in diagnosis time', 'HIPAA-compliant deployment', 'Adopted by 200+ clinicians'],
     technologies: ['Python', 'TensorFlow', 'FHIR', 'AWS SageMaker', 'React', 'PostgreSQL'],
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80',
   },
   {
     slug: 'retail-omnichannel-platform',
@@ -43,6 +46,7 @@ export const caseStudies: CaseStudy[] = [
     solution: 'Developed a unified commerce platform with real-time inventory sync, personalized recommendations, and seamless checkout across all channels.',
     results: ['3x increase in online revenue', 'Unified inventory across 500+ locations', '40% improvement in customer retention', 'Single customer view achieved'],
     technologies: ['Next.js', 'Node.js', 'PostgreSQL', 'Redis', 'Stripe', 'AWS'],
+    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80',
   },
 ];
 

@@ -38,7 +38,7 @@ export function Header() {
         <nav
           className={cn(
             'flex items-center justify-between rounded-2xl px-5 py-3 transition-all duration-500',
-            isScrolled ? 'glass shadow-glass' : 'bg-transparent',
+            isScrolled ? 'glass shadow-glass' : 'glass shadow-sm',
           )}
           aria-label="Main navigation"
         >
@@ -116,8 +116,8 @@ export function Header() {
             ))}
           </div>
 
-          <div className="hidden items-center gap-3 lg:flex">
-            <Button href="/request-quote" variant="outline" size="sm">
+          <div className="hidden items-center gap-2 lg:flex">
+            <Button href="/request-quote" variant="ghost" size="sm">
               Request Quote
             </Button>
             <Button href="/contact" size="sm" rightIcon={<ArrowRight className="h-4 w-4" />}>

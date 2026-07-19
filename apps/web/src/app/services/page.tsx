@@ -28,13 +28,13 @@ export const metadata = createMetadata({
 export default function ServicesPage() {
   return (
     <PageLayout>
-      <PageHero
+      <PageHero pattern
         eyebrow="Services"
         title="Enterprise Technology Services"
         description="Comprehensive technology solutions engineered for scale, security, and measurable business impact."
       />
 
-      <section className="pb-20">
+      <section className="py-12 md:py-11">
         <div className="container-wide">
           <Breadcrumbs items={[{ label: 'Services' }]} />
 

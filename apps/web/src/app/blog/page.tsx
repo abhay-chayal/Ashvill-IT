@@ -16,8 +16,8 @@ export const metadata = createMetadata({
 export default function BlogPage() {
   return (
     <PageLayout>
-      <PageHero eyebrow="Blog" title="Insights & Perspectives" description="Expert perspectives on enterprise technology trends, best practices, and innovation." />
-      <section className="pb-20">
+      <PageHero pattern eyebrow="Blog" title="Insights & Perspectives" description="Expert perspectives on enterprise technology trends, best practices, and innovation." />
+      <section className="py-12 md:py-20">
         <div className="container-wide">
           <Breadcrumbs items={[{ label: 'Blog' }]} />
           <StaggerContainer className="grid gap-8 md:grid-cols-2">

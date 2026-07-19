@@ -1,5 +1,6 @@
 export interface ServiceData {
   slug: string;
+  image: string;
   title: string;
   shortDescription: string;
   overview: string;
@@ -23,6 +24,7 @@ const baseProcess = [
 
 function createService(
   slug: string,
+  image: string,
   title: string,
   shortDescription: string,
   overview: string,
@@ -37,6 +39,7 @@ function createService(
 ): ServiceData {
   return {
     slug,
+    image,
     title,
     shortDescription,
     overview,
@@ -55,6 +58,7 @@ function createService(
 export const services: ServiceData[] = [
   createService(
     'custom-software-development',
+    'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80',
     'Custom Software Development',
     'Bespoke enterprise applications engineered for scale, security, and long-term maintainability.',
     'Ashvill designs and builds custom software solutions tailored to your unique enterprise workflows. From complex business logic to mission-critical platforms, we deliver software that drives measurable outcomes.',
@@ -72,6 +76,7 @@ export const services: ServiceData[] = [
   ),
   createService(
     'web-development',
+    'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80',
     'Web Development',
     'High-performance web applications and portals built with modern frameworks and enterprise standards.',
     'We craft responsive, accessible, and blazing-fast web experiences that convert visitors into enterprise clients. Our web solutions prioritize performance, security, and exceptional user experience.',
@@ -89,6 +94,7 @@ export const services: ServiceData[] = [
   ),
   createService(
     'mobile-apps',
+    'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80',
     'Mobile App Development',
     'Native and cross-platform mobile applications that deliver premium experiences on iOS and Android.',
     'Ashvill builds mobile applications that enterprise users love — intuitive interfaces, offline capabilities, and enterprise-grade security baked in from day one.',
@@ -106,6 +112,7 @@ export const services: ServiceData[] = [
   ),
   createService(
     'cloud',
+    'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80',
     'Cloud Solutions',
     'Strategic cloud architecture, migration, and management across AWS, Azure, and Google Cloud.',
     'Transform your infrastructure with cloud-native solutions designed for resilience, scalability, and cost optimization. We architect multi-cloud and hybrid environments tailored to enterprise compliance needs.',
@@ -123,6 +130,7 @@ export const services: ServiceData[] = [
   ),
   createService(
     'devops',
+    'https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&q=80',
     'DevOps & CI/CD',
     'Accelerate delivery with automated pipelines, infrastructure automation, and Site Reliability Engineering practices.',
     'Our DevOps practice bridges development and operations, enabling your teams to ship faster, more reliably, and with confidence through modern CI/CD and SRE methodologies.',
@@ -140,6 +148,7 @@ export const services: ServiceData[] = [
   ),
   createService(
     'cybersecurity',
+    'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80',
     'Cybersecurity',
     'Comprehensive security assessments, implementation, and managed security services for enterprise protection.',
     'Protect your digital assets with enterprise-grade cybersecurity solutions. From penetration testing to SOC implementation, Ashvill safeguards your organization against evolving threats.',
@@ -157,6 +166,7 @@ export const services: ServiceData[] = [
   ),
   createService(
     'ai',
+    'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&q=80',
     'AI & Machine Learning',
     'Intelligent systems that automate decisions, predict outcomes, and unlock insights from your data.',
     'Leverage artificial intelligence and machine learning to transform raw data into strategic advantage. We build production-ready AI systems that integrate seamlessly with your enterprise workflows.',
@@ -174,6 +184,7 @@ export const services: ServiceData[] = [
   ),
   createService(
     'generative-ai',
+    'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80',
     'Generative AI',
     'Enterprise-grade LLM integration, RAG systems, and AI copilots that augment your workforce.',
     'Harness the power of generative AI safely and effectively. We build custom AI assistants, document processing systems, and intelligent automation powered by leading LLM technologies.',
@@ -191,6 +202,7 @@ export const services: ServiceData[] = [
   ),
   createService(
     'erp',
+    'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80',
     'ERP Solutions',
     'Enterprise resource planning implementation, customization, and integration for operational excellence.',
     'Streamline your business operations with expertly implemented ERP solutions. We customize and integrate ERP platforms to unify your finance, supply chain, HR, and operations.',
@@ -208,6 +220,7 @@ export const services: ServiceData[] = [
   ),
   createService(
     'crm',
+    'https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&q=80',
     'CRM Solutions',
     'Customer relationship management platforms that drive sales growth and customer retention.',
     'Build stronger customer relationships with CRM solutions tailored to your sales, marketing, and service workflows. We implement and customize leading CRM platforms for measurable revenue impact.',
@@ -225,6 +238,7 @@ export const services: ServiceData[] = [
   ),
   createService(
     'saas',
+    'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80',
     'SaaS Development',
     'End-to-end SaaS product engineering from MVP to scale-ready multi-tenant platforms.',
     'Launch and scale your SaaS product with Ashvill\'s full-stack expertise. We build multi-tenant architectures with subscription billing, analytics, and enterprise-grade security.',
@@ -242,6 +256,7 @@ export const services: ServiceData[] = [
   ),
   createService(
     'ui-ux',
+    'https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80',
     'UI/UX Design',
     'Human-centered design that transforms complex enterprise workflows into intuitive digital experiences.',
     'Great design drives adoption. Our UI/UX team creates research-backed, accessible interfaces that reduce training costs and accelerate user productivity across your organization.',
@@ -259,6 +274,7 @@ export const services: ServiceData[] = [
   ),
   createService(
     'qa',
+    'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80',
     'QA & Testing',
     'Comprehensive quality assurance ensuring your software meets the highest reliability standards.',
     'Ship with confidence. Our QA engineers implement rigorous testing strategies — automated, manual, performance, and security — to protect your brand and users.',
@@ -276,6 +292,7 @@ export const services: ServiceData[] = [
   ),
   createService(
     'automation',
+    'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80',
     'Automation',
     'Intelligent process automation that eliminates manual workflows and accelerates business operations.',
     'Automate repetitive tasks, integrate disparate systems, and orchestrate complex workflows with our RPA and intelligent automation solutions.',
@@ -293,6 +310,7 @@ export const services: ServiceData[] = [
   ),
   createService(
     'data-analytics',
+    'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80',
     'Data Analytics',
     'Transform raw data into actionable insights with advanced analytics and visualization platforms.',
     'Make data-driven decisions with confidence. We build analytics pipelines, dashboards, and reporting systems that surface the insights your leadership team needs.',
@@ -310,6 +328,7 @@ export const services: ServiceData[] = [
   ),
   createService(
     'business-intelligence',
+    'https://images.unsplash.com/photo-1533750516457-a7f992034fec?auto=format&fit=crop&q=80',
     'Business Intelligence',
     'Executive-grade BI platforms that unify data and empower strategic decision-making.',
     'Consolidate fragmented data into a single source of truth. Our BI solutions deliver the KPIs, reports, and visualizations your C-suite needs to steer the organization.',
@@ -327,6 +346,7 @@ export const services: ServiceData[] = [
   ),
   createService(
     'api-development',
+    'https://images.unsplash.com/photo-1623282033815-40b05d96c903?auto=format&fit=crop&q=80',
     'API Development',
     'Robust, secure, and well-documented APIs that power integrations and digital ecosystems.',
     'Build the connective tissue of your digital ecosystem. We design RESTful and GraphQL APIs with comprehensive documentation, versioning, and developer portals.',
@@ -344,6 +364,7 @@ export const services: ServiceData[] = [
   ),
   createService(
     'it-consulting',
+    'https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80',
     'IT Consulting',
     'Strategic technology advisory that aligns IT investments with business objectives.',
     'Navigate complex technology decisions with expert guidance. Our consultants bring decades of combined experience across industries to architect your digital future.',
@@ -361,6 +382,7 @@ export const services: ServiceData[] = [
   ),
   createService(
     'staff-augmentation',
+    'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80',
     'Staff Augmentation',
     'Elite technology talent embedded in your team to accelerate delivery without hiring overhead.',
     'Scale your development capacity instantly with pre-vetted Ashvill engineers. Our professionals integrate seamlessly with your workflows, tools, and culture.',
@@ -378,6 +400,7 @@ export const services: ServiceData[] = [
   ),
   createService(
     'dedicated-teams',
+    'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80',
     'Dedicated Teams',
     'Fully managed cross-functional teams that operate as an extension of your organization.',
     'Get a complete product team — developers, designers, QA, and project managers — dedicated exclusively to your initiatives with Ashvill\'s management oversight.',
@@ -395,6 +418,7 @@ export const services: ServiceData[] = [
   ),
   createService(
     'legacy-modernization',
+    'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80',
     'Legacy Modernization',
     'Transform aging systems into modern, cloud-native architectures without business disruption.',
     'Modernize legacy applications strategically with minimal risk. We assess, plan, and execute migrations that preserve business logic while unlocking modern capabilities.',
@@ -412,6 +436,7 @@ export const services: ServiceData[] = [
   ),
   createService(
     'application-maintenance',
+    'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80',
     'Application Maintenance',
     'Proactive maintenance and support that keeps your applications secure, performant, and evolving.',
     'Protect your technology investments with comprehensive application maintenance. We handle updates, monitoring, bug fixes, and enhancements so your team can focus on growth.',
@@ -429,6 +454,7 @@ export const services: ServiceData[] = [
   ),
   createService(
     'cloud-migration',
+    'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80',
     'Cloud Migration',
     'Seamless migration of workloads, databases, and applications to cloud infrastructure.',
     'Move to the cloud with confidence. Our proven migration methodology ensures minimal disruption while optimizing for performance, cost, and security in your target cloud environment.',

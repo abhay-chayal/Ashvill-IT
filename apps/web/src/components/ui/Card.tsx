@@ -25,7 +25,7 @@ export function Card({
   return (
     <div
       className={cn(
-        'rounded-2xl',
+        'group relative overflow-hidden rounded-2xl',
         glass ? 'glass' : 'bg-white border border-surface-200 shadow-sm',
         paddingMap[padding],
         hover && 'transition-all duration-300 hover:-translate-y-1 hover:shadow-elevated',

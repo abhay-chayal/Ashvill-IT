@@ -17,8 +17,8 @@ const serviceOptions = services.map((s) => ({ value: s.slug, label: s.title }));
 export default function RequestQuotePage() {
   return (
     <PageLayout>
-      <PageHero eyebrow="Get Started" title="Request a Quote" description="Share your project requirements and receive a detailed proposal from our solutions team." />
-      <section className="pb-20">
+      <PageHero pattern eyebrow="Get Started" title="Request a Quote" description="Share your project requirements and receive a detailed proposal from our solutions team." />
+      <section className="py-12 md:py-11">
         <div className="container-narrow">
           <Breadcrumbs items={[{ label: 'Request Quote' }]} />
           <FadeIn>

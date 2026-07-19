@@ -5,7 +5,6 @@ import { Card } from '@/components/ui/Card';
 import { StaggerContainer, StaggerItem } from '@/components/ui/Motion';
 import { caseStudies } from '@/content/case-studies';
 import { createMetadata } from '@/lib/seo';
-import { ArrowRight } from 'lucide-react';
 
 export const metadata = createMetadata({
   title: 'Portfolio',
@@ -42,8 +41,8 @@ const portfolioItems = [
 export default function PortfolioPage() {
   return (
     <PageLayout>
-      <PageHero eyebrow="Portfolio" title="Our Work" description="A selection of enterprise technology projects delivering measurable business impact." />
-      <section className="pb-20">
+      <PageHero pattern eyebrow="Portfolio" title="Our Work" description="A selection of enterprise technology projects delivering measurable business impact." />
+      <section className="py-12 md:py-11">
         <div className="container-wide">
           <Breadcrumbs items={[{ label: 'Portfolio' }]} />
           <StaggerContainer className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">

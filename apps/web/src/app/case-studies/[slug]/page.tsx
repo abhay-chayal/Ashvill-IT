@@ -28,7 +28,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
   return (
     <PageLayout>
       <PageHero eyebrow="Case Study" title={study.title} description={study.challenge} />
-      <section className="pb-20">
+      <section className="py-12 md:py-11">
         <div className="container-wide">
           <Breadcrumbs items={[{ label: 'Case Studies', href: '/case-studies' }, { label: study.title }]} />
           <div className="grid gap-16 lg:grid-cols-3">

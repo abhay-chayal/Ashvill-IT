@@ -19,32 +19,58 @@ export function PageLayout({ children, className }: PageLayoutProps) {
   );
 }
 
+import Image from 'next/image';
+
 interface PageHeroProps {
   eyebrow?: string;
   title: string;
   description?: string;
+  image?: string;
+  pattern?: boolean;
   children?: ReactNode;
 }
 
-export function PageHero({ eyebrow, title, description, children }: PageHeroProps) {
+export function PageHero({ eyebrow, title, description, image, pattern, children }: PageHeroProps) {
   return (
-    <section className="relative overflow-hidden pt-32 pb-16 md:pt-40 md:pb-20">
-      <div className="gradient-mesh absolute inset-0" aria-hidden />
-      <div className="container-wide relative">
+    <section className="relative overflow-hidden pt-32 pb-16 md:pt-40 md:pb-32">
+      {image ? (
+        <>
+          <div className="absolute inset-0">
+            <Image src={image} alt={title} fill priority className="object-cover" />
+          </div>
+          <div className="absolute inset-0 bg-surface-900/80 bg-gradient-to-t from-surface-900 via-surface-900/60 to-surface-900/30 backdrop-blur-[2px]" aria-hidden />
+        </>
+      ) : (
+        <div className="gradient-mesh absolute inset-0" aria-hidden />
+      )}
+
+      {pattern && (
+        <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+          <div className="absolute -top-[40%] -left-[10%] h-[100%] w-[60%] rounded-full bg-brand-300/15 blur-[120px]" />
+          <div className="absolute top-[20%] -right-[10%] h-[80%] w-[50%] rounded-full bg-purple-400/10 blur-[100px]" />
+          <div className="absolute -bottom-[20%] left-[20%] h-[60%] w-[60%] rounded-full bg-blue-300/10 blur-[120px]" />
+        </div>
+      )}
+      
+      <div className="container-wide relative z-10">
         {eyebrow && (
-          <span className="mb-4 inline-block rounded-full bg-brand-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-brand-600">
+          <span className={`mb-6 inline-block rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-widest ${image ? 'bg-brand-500/20 text-brand-100 border border-brand-500/30' : 'bg-brand-50 text-brand-600'}`}>
             {eyebrow}
           </span>
         )}
-        <h1 className="font-display max-w-4xl text-4xl font-bold tracking-tight text-surface-900 md:text-5xl lg:text-6xl">
+        <h1 className={`font-display max-w-4xl text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl ${image ? 'text-white drop-shadow-sm' : 'text-surface-900'}`}>
           {title}
         </h1>
         {description && (
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-surface-500 md:text-xl">
+          <p className={`mt-6 max-w-2xl text-lg leading-relaxed md:text-xl ${image ? 'text-surface-200' : 'text-surface-500'}`}>
             {description}
           </p>
         )}
-        {children}
+        {children && (
+          <div className="mt-8">
+            {children}
+          </div>
+        )}
       </div>
     </section>
   );

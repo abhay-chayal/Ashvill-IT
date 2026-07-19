@@ -70,18 +70,19 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
         eyebrow="Service"
         title={service.title}
         description={service.shortDescription}
+        image={service.image}
       >
         <div className="mt-8 flex flex-wrap gap-4">
           <Button href="/request-quote" rightIcon={<ArrowRight className="h-4 w-4" />}>
             Request a Quote
           </Button>
-          <Button href="/contact" variant="outline">
+          <Button href="/contact" variant="glass">
             Talk to an Expert
           </Button>
         </div>
       </PageHero>
 
-      <section className="pb-20">
+      <section className="py-12 md:py-11">
         <div className="container-wide">
           <Breadcrumbs
             items={[

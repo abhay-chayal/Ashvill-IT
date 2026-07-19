@@ -30,7 +30,7 @@ export default async function CareerDetailPage({ params }: Props) {
   return (
     <PageLayout>
       <PageHero eyebrow="Careers" title={job.title} description={job.description} />
-      <section className="pb-20">
+      <section className="py-12 md:py-11">
         <div className="container-wide">
           <Breadcrumbs items={[{ label: 'Careers', href: '/careers' }, { label: job.title }]} />
           <div className="grid gap-12 lg:grid-cols-3">
