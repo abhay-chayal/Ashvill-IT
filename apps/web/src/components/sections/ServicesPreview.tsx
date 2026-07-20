@@ -11,7 +11,7 @@ import {
   ArrowRight, type LucideIcon,
 } from 'lucide-react';
 import { SectionHeader } from '@/components/ui/SectionHeader';
-import { Card, CardIcon } from '@/components/ui/Card';
+import { Card } from '@/components/ui/Card';
 import { FadeIn } from '@/components/ui/Motion';
 import { services } from '@/content/services';
 

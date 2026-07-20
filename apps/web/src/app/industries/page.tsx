@@ -1,6 +1,5 @@
 import { PageLayout, PageHero, CTASection } from '@/components/layout/PageLayout';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
-import { Card } from '@/components/ui/Card';
 import { StaggerContainer, StaggerItem } from '@/components/ui/Motion';
 import { industries } from '@/content/industries';
 import { createMetadata } from '@/lib/seo';

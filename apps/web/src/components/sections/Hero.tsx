@@ -1,7 +1,6 @@
 'use client';
 
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
-import { motion, useInView, animate } from 'framer-motion';
+import { useInView, animate } from 'framer-motion';
 import { useEffect, useState, useRef } from 'react';
 import { Button } from '@/components/ui/Button';
 import { company, stats } from '@/config/company';
@@ -83,6 +82,7 @@ export function HeroSection() {
           </div>
           
           <div className="relative h-[500px] w-full rounded-2xl overflow-hidden shadow-elevated">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img 
               src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2938&auto=format&fit=crop" 
               alt="Modern enterprise infrastructure and workspace" 
@@ -129,6 +129,7 @@ export function TrustBar() {
               key={partner.name} 
               className="opacity-40 transition-all duration-300 hover:opacity-80 hover:-translate-y-1"
             >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img 
                 src={`https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/${partner.icon}.svg`}
                 alt={partner.name}

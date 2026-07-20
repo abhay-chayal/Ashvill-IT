@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { Target, Zap, Shield, TrendingUp } from 'lucide-react';
-import { SectionHeader } from '@/components/ui/SectionHeader';
 import { Card, CardIcon } from '@/components/ui/Card';
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/ui/Motion';
 
