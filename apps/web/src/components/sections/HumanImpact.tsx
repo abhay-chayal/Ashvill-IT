@@ -91,7 +91,7 @@ export function HumanImpact() {
                 <div className="relative">
                   <Quote className="h-24 w-24 text-surface-100 absolute -top-8 -left-8 md:-top-10 md:-left-12 -z-10 rotate-180" />
                   <h3 className="font-display text-3xl font-light tracking-tight text-surface-950 md:text-5xl leading-[1.15] mb-8">
-                    "{impacts[currentIndex].quote}"
+                    &quot;{impacts[currentIndex].quote}&quot;
                   </h3>
                   <div className="space-y-5 text-lg text-surface-600 leading-relaxed mb-10">
                     <p>{impacts[currentIndex].p1}</p>
