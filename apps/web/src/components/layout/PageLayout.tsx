@@ -96,7 +96,7 @@ export function CTASection({
   return (
     <section className="section-padding">
       <div className="container-wide">
-        <div className="relative overflow-hidden rounded-3xl bg-surface-900 px-8 py-16 text-center md:px-16 md:py-20">
+        <div className="relative overflow-hidden rounded-3xl bg-surface-950 px-8 py-16 text-center shadow-2xl md:px-16 md:py-20 border border-surface-800">
           <div
             className="absolute inset-0 opacity-30"
             style={{

@@ -46,7 +46,7 @@ export function CardIcon({ icon, className }: CardIconProps) {
   return (
     <div
       className={cn(
-        'mb-5 flex h-12 w-12 items-center justify-center rounded-xl gradient-brand text-white shadow-lg shadow-brand-500/20',
+        'mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-500/10 text-brand-600 border border-brand-500/20',
         className,
       )}
     >

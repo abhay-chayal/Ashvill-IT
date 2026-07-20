@@ -36,7 +36,7 @@ const caseStudies = [
 
 export function CaseStudiesPreview() {
   return (
-    <section className="section-padding">
+    <section className="section-padding bg-surface-50">
       <div className="container-wide">
         <FadeIn>
           <SectionHeader

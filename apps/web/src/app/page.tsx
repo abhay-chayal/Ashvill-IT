@@ -2,6 +2,7 @@ import { PageLayout, CTASection } from '@/components/layout/PageLayout';
 import { HeroSection, TrustBar } from '@/components/sections/Hero';
 import { ServicesPreview } from '@/components/sections/ServicesPreview';
 import { WhyAshvill } from '@/components/sections/WhyAshvill';
+import { HumanImpact } from '@/components/sections/HumanImpact';
 import { CaseStudiesPreview } from '@/components/sections/CaseStudiesPreview';
 import { createMetadata } from '@/lib/seo';
 
@@ -19,6 +20,7 @@ export default function HomePage() {
       <TrustBar />
       <ServicesPreview />
       <WhyAshvill />
+      <HumanImpact />
       <CaseStudiesPreview />
       <CTASection
         title="Ready to Transform Your Enterprise?"

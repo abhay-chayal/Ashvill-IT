@@ -2,45 +2,45 @@
 
 @theme {
   /* =========================
-     BRAND (Royal Purple)
+     BRAND (Terracotta / Redwood)
   ========================= */
 
-  --color-brand-50: #faf7ff;
-  --color-brand-100: #f3edff;
-  --color-brand-200: #e7dbff;
-  --color-brand-300: #d3b8ff;
-  --color-brand-400: #b985ff;
-  --color-brand-500: #8b5cf6;
-  --color-brand-600: #6d28d9;
-  --color-brand-700: #5b21b6;
-  --color-brand-800: #4c1d95;
-  --color-brand-900: #31165d;
-  --color-brand-950: #1c1333;
+  --color-brand-50: #fff5f2;
+  --color-brand-100: #ffe8e0;
+  --color-brand-200: #ffcfbe;
+  --color-brand-300: #ffaf96;
+  --color-brand-400: #ff8461;
+  --color-brand-500: #fa5c33;
+  --color-brand-600: #e54016;
+  --color-brand-700: #c12f0e;
+  --color-brand-800: #9e2710;
+  --color-brand-900: #832513;
+  --color-brand-950: #471006;
 
   /* =========================
-     ACCENT (Purple + Pink)
+     ACCENT (Warm Gold)
   ========================= */
 
-  --color-accent-300: #f9a8d4;
-  --color-accent-400: #f472b6;
-  --color-accent-500: #ec4899;
-  --color-accent-600: #db2777;
+  --color-accent-300: #fde047;
+  --color-accent-400: #facc15;
+  --color-accent-500: #eab308;
+  --color-accent-600: #ca8a04;
 
   /* =========================
-     SURFACE COLORS
+     SURFACE COLORS (Cream & Charcoal)
   ========================= */
 
-  --color-surface-50: #fcfbff;
-  --color-surface-100: #f7f4ff;
-  --color-surface-200: #efeaff;
-  --color-surface-300: #ddd6fe;
-  --color-surface-400: #b7afd4;
-  --color-surface-500: #7d7a91;
-  --color-surface-600: #605d70;
-  --color-surface-700: #464257;
-  --color-surface-800: #2d293d;
-  --color-surface-900: #191626;
-  --color-surface-950: #0d0a17;
+  --color-surface-50: #fcfbf9;
+  --color-surface-100: #f6f4ee;
+  --color-surface-200: #e8e3d9;
+  --color-surface-300: #d5ccbe;
+  --color-surface-400: #a79a88;
+  --color-surface-500: #7d7262;
+  --color-surface-600: #62584c;
+  --color-surface-700: #4f473e;
+  --color-surface-800: #3a342e;
+  --color-surface-900: #2a2522;
+  --color-surface-950: #161513;
 
   /* =========================
      FONTS
@@ -64,11 +64,11 @@
      SHADOWS
   ========================= */
 
-  --shadow-glass: 0 10px 35px rgba(91, 33, 182, .08);
+  --shadow-glass: 0 10px 35px rgba(22, 21, 19, .08);
 
-  --shadow-elevated: 0 20px 70px rgba(91, 33, 182, .12);
+  --shadow-elevated: 0 20px 70px rgba(22, 21, 19, .12);
 
-  --shadow-glow: 0 0 45px rgba(109, 40, 217, .22);
+  --shadow-glow: 0 0 45px rgba(229, 64, 22, .22);
 }
 
 /* =========================
@@ -92,14 +92,8 @@ scroll-behavior:smooth;
 body{
 @apply bg-surface-50 text-surface-900 font-sans;
 font-feature-settings:'cv02','cv03','cv04','cv11';
-background:
-radial-gradient(circle at top right,
-rgba(139,92,246,.12),
-transparent 38%),
-radial-gradient(circle at bottom left,
-rgba(244,114,182,.08),
-transparent 35%),
-#fcfbff;
+/* Oracle Redwood style: warm cream background */
+background: #F9F8F6;
 }
 
 :focus-visible{
@@ -107,8 +101,8 @@ transparent 35%),
 }
 
 ::selection{
-background:#c4b5fd;
-color:#1c1333;
+background:#ffcfbe;
+color:#161513;
 }
 
 }
@@ -120,26 +114,23 @@ color:#1c1333;
 @layer utilities {
 
 .glass{
-background:rgba(255,255,255,.78);
-backdrop-filter:blur(20px);
-border: 0px solid transparent !important;
-outline: none !important;
-box-shadow: none !important;
+background: #ffffff;
+border: 1px solid rgba(0,0,0,0.04);
+box-shadow: 0 10px 40px rgba(0,0,0,0.06);
 }
 
 .glass-dark{
-background:rgba(28,19,51,.85);
-backdrop-filter:blur(18px);
-border:1px solid rgba(255,255,255,.08);
-box-shadow:var(--shadow-glass);
+background: #161513;
+border: 1px solid rgba(255,255,255,.08);
+box-shadow: 0 10px 40px rgba(0,0,0,0.2);
 }
 
 .gradient-brand{
 background:linear-gradient(
 135deg,
-#5b21b6 0%,
-#7c3aed 45%,
-#ec4899 100%);
+#c12f0e 0%,
+#fa5c33 45%,
+#eab308 100%);
 }
 
 .gradient-mesh{
@@ -147,28 +138,28 @@ background:
 
 radial-gradient(
 circle at 15% 20%,
-rgba(139,92,246,.18),
+rgba(250,92,51,.12),
 transparent 35%),
 
 radial-gradient(
 circle at 85% 10%,
-rgba(236,72,153,.12),
+rgba(234,179,8,.08),
 transparent 30%),
 
 radial-gradient(
 circle at 60% 90%,
-rgba(109,40,217,.10),
+rgba(193,47,14,.08),
 transparent 35%),
 
-#fcfbff;
+#fcfbf9;
 }
 
 .text-gradient{
 background:linear-gradient(
 135deg,
-#5b21b6,
-#7c3aed,
-#ec4899);
+#c12f0e,
+#fa5c33,
+#eab308);
 
 -webkit-background-clip:text;
 background-clip:text;

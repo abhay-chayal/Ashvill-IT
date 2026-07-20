@@ -8,9 +8,9 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-surface-200 bg-surface-900 text-white" role="contentinfo">
-      <div className="container-wide section-padding pb-12">
-        <div className="grid gap-12 lg:grid-cols-12">
+    <footer className="border-t border-surface-800 bg-surface-950 text-surface-50" role="contentinfo">
+      <div className="container-wide py-24">
+        <div className="grid gap-16 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <Logo variant="light" className="mb-6" />
             <p className="mb-6 max-w-sm text-sm leading-relaxed text-surface-400">
@@ -105,8 +105,7 @@ export function Footer() {
             </p>
             <Button
               href="/request-quote"
-              variant="primary"
-              className="w-full"
+              className="w-full bg-white text-surface-950 hover:bg-surface-100 border-none shadow-sm hover:-translate-y-0.5 transition-all"
               rightIcon={<ArrowUpRight className="h-4 w-4" />}
             >
               Request a Quote
@@ -114,8 +113,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-surface-800 pt-8 sm:flex-row">
-          <p className="text-sm text-surface-500">
+        <div className="mt-24 flex flex-col items-center justify-between gap-6 border-t border-surface-800 pt-8 sm:flex-row">
+          <p className="text-sm text-surface-400">
             &copy; {currentYear} {company.name}. All rights reserved.
           </p>
           <div className="flex gap-4">

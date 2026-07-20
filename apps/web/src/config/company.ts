@@ -35,10 +35,9 @@ export const contact = {
 
 export const stats = [
   { label: 'Years of Excellence', value: '9+' },
-  { label: 'Enterprise Projects', value: '350+' },
+  { label: 'Enterprise Projects', value: '500+' },
   { label: 'Global Clients', value: '400+' },
   { label: 'Team Members', value: '45+' },
-  { label: 'Client Satisfaction', value: '4.7/5' },
 ] as const;
 
 export const navigation = {

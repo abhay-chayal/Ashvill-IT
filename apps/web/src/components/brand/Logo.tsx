@@ -13,24 +13,29 @@ export function Logo({ className, variant = 'default', showText = true }: LogoPr
 
   return (
     <Link href="/" className={cn('group flex items-center', className)} aria-label={company.name}>
-      <div 
-        className={cn(
-          "transition-transform duration-300 group-hover:scale-105",
-          isLight ? "bg-white" : "gradient-brand",
-          "h-[40px] w-[110px] md:h-[52px] md:w-[150px]"
+      <div className="flex items-center transition-transform duration-300 group-hover:scale-105">
+        {/* Geometric 'A' Mark */}
+        <svg 
+          width="32" 
+          height="32" 
+          viewBox="0 0 36 36" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg" 
+          className="text-brand-600"
+        >
+          <path d="M18 2L34 34H22L18 26L14 34H2L18 2Z" fill="currentColor"/>
+        </svg>
+        
+        {/* Sleek Wordmark */}
+        {showText && (
+          <span className={cn(
+            "-ml-0.5 mt-1 font-display text-[26px] font-extrabold tracking-tight",
+            isLight ? "text-white" : "text-surface-950"
+          )}>
+            shvill
+          </span>
         )}
-        style={{
-          maskImage: 'url(/logo-new.png)',
-          maskSize: 'contain',
-          maskRepeat: 'no-repeat',
-          maskPosition: 'left center',
-          WebkitMaskImage: 'url(/logo-new.png)',
-          WebkitMaskSize: 'contain',
-          WebkitMaskRepeat: 'no-repeat',
-          WebkitMaskPosition: 'left center',
-        }}
-        aria-hidden
-      />
+      </div>
     </Link>
   );
 }

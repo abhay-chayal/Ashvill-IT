@@ -66,7 +66,7 @@ export function ServicesPreview() {
   }, [activeIndex]);
 
   return (
-    <section className="section-padding relative">
+    <section className="section-padding relative bg-white">
       <div className="container-wide">
         <FadeIn>
           <SectionHeader
@@ -79,7 +79,7 @@ export function ServicesPreview() {
         <div className="mt-16 flex flex-col gap-8">
           {/* Top Showcase Image Area */}
           <div 
-            className="relative w-full h-[50vh] min-h-[400px] lg:h-[60vh] rounded-3xl overflow-hidden shadow-2xl bg-surface-900 border border-surface-800"
+            className="relative w-full h-[50vh] min-h-[400px] lg:h-[60vh] rounded-3xl overflow-hidden shadow-sm bg-white border border-surface-200"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
@@ -102,8 +102,8 @@ export function ServicesPreview() {
                   />
                 )}
                 {/* Gradient overlay for readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-surface-900 via-surface-900/40 to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-r from-surface-900/80 via-surface-900/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-white via-white/90 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent" />
                 
                 {/* Embedded Content inside the image */}
                 <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-16">
@@ -113,16 +113,16 @@ export function ServicesPreview() {
                     transition={{ delay: 0.2, duration: 0.5 }}
                     className="max-w-2xl"
                   >
-                    <h3 className="text-4xl lg:text-5xl font-display font-bold text-white mb-6">
+                    <h3 className="text-4xl lg:text-5xl font-display font-light text-surface-950 mb-6">
                       {featured[activeIndex].title}
                     </h3>
-                    <p className="text-surface-200 text-lg lg:text-xl leading-relaxed">
+                    <p className="text-surface-600 font-light text-lg lg:text-xl leading-relaxed">
                       {featured[activeIndex].shortDescription}
                     </p>
                     <div className="mt-8">
-                       <Link
+                        <Link
                          href={`/services/${featured[activeIndex].slug}`}
-                         className="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-500 text-white px-6 py-3 rounded-full font-semibold transition-colors"
+                         className="inline-flex items-center gap-2 bg-surface-900 hover:bg-surface-800 text-white px-6 py-3 rounded-full font-medium transition-colors"
                        >
                          Explore Service <ArrowRight className="h-4 w-4" />
                        </Link>
@@ -167,7 +167,7 @@ export function ServicesPreview() {
                         <div className={`mb-4 transition-colors duration-300 ${isActive ? 'text-brand-600' : 'text-surface-600'}`}>
                            <Icon className="h-8 w-8" />
                         </div>
-                        <h3 className={`mb-2 font-display text-xl font-semibold transition-colors duration-300 ${isActive ? 'text-surface-900' : 'text-surface-700'}`}>
+                        <h3 className={`mb-2 font-display text-xl font-medium transition-colors duration-300 ${isActive ? 'text-surface-900' : 'text-surface-700'}`}>
                           {service.title}
                         </h3>
                         <p className="text-sm leading-relaxed text-surface-500 line-clamp-2">
