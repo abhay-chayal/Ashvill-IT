@@ -12,32 +12,6 @@ export const metadata = createMetadata({
   path: '/portfolio',
 });
 
-const portfolioItems = [
-  ...caseStudies,
-  {
-    slug: 'saas-analytics-dashboard',
-    title: 'SaaS Analytics Dashboard',
-    industry: 'SaaS',
-    client: 'B2B Analytics Startup',
-    duration: '6 months',
-    challenge: 'Needed a scalable analytics platform for enterprise customers.',
-    solution: 'Built a multi-tenant SaaS dashboard with real-time data processing.',
-    results: ['500+ enterprise users onboarded', 'Sub-second query performance'],
-    technologies: ['Next.js', 'PostgreSQL', 'Redis', 'AWS'],
-  },
-  {
-    slug: 'logistics-tracking-system',
-    title: 'Real-Time Logistics Tracking',
-    industry: 'Logistics',
-    client: 'Global Logistics Provider',
-    duration: '8 months',
-    challenge: 'Lack of real-time visibility across multi-modal shipments.',
-    solution: 'IoT-integrated tracking platform with predictive ETA and automated alerts.',
-    results: ['95% on-time delivery visibility', '30% reduction in support calls'],
-    technologies: ['React', 'Node.js', 'MongoDB', 'AWS IoT'],
-  },
-];
-
 export default function PortfolioPage() {
   return (
     <PageLayout>
@@ -46,7 +20,7 @@ export default function PortfolioPage() {
         <div className="container-wide">
           <Breadcrumbs items={[{ label: 'Portfolio' }]} />
           <StaggerContainer className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {portfolioItems.map((item) => (
+            {caseStudies.map((item) => (
               <StaggerItem key={item.slug}>
                 <Link href={`/case-studies/${item.slug}`} className="block h-full">
                   <Card hover className="flex h-full flex-col">

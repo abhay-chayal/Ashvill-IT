@@ -48,6 +48,30 @@ export const caseStudies: CaseStudy[] = [
     technologies: ['Next.js', 'Node.js', 'PostgreSQL', 'Redis', 'Stripe', 'AWS'],
     image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80',
   },
+  {
+    slug: 'saas-analytics-dashboard',
+    title: 'SaaS Analytics Dashboard',
+    industry: 'SaaS',
+    client: 'B2B Analytics Startup',
+    duration: '6 months',
+    challenge: 'Needed a scalable analytics platform for enterprise customers.',
+    solution: 'Built a multi-tenant SaaS dashboard with real-time data processing.',
+    results: ['500+ enterprise users onboarded', 'Sub-second query performance'],
+    technologies: ['Next.js', 'PostgreSQL', 'Redis', 'AWS'],
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80',
+  },
+  {
+    slug: 'logistics-tracking-system',
+    title: 'Real-Time Logistics Tracking',
+    industry: 'Logistics',
+    client: 'Global Logistics Provider',
+    duration: '8 months',
+    challenge: 'Lack of real-time visibility across multi-modal shipments.',
+    solution: 'IoT-integrated tracking platform with predictive ETA and automated alerts.',
+    results: ['95% on-time delivery visibility', '30% reduction in support calls'],
+    technologies: ['React', 'Node.js', 'MongoDB', 'AWS IoT'],
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80',
+  }
 ];
 
 export function getCaseStudyBySlug(slug: string): CaseStudy | undefined {
