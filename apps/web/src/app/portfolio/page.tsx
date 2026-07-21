@@ -23,14 +23,19 @@ export default function PortfolioPage() {
             {caseStudies.map((item) => (
               <StaggerItem key={item.slug}>
                 <Link href={`/case-studies/${item.slug}`} className="block h-full">
-                  <Card hover className="flex h-full flex-col">
-                    <span className="mb-3 w-fit rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-600">{item.industry}</span>
-                    <h2 className="font-display mb-2 text-xl font-semibold text-surface-900">{item.title}</h2>
-                    <p className="mb-4 flex-grow text-sm text-surface-500">{item.challenge}</p>
-                    <div className="flex flex-wrap gap-1.5">
-                      {item.technologies.slice(0, 4).map((tech) => (
-                        <span key={tech} className="rounded bg-surface-100 px-2 py-0.5 text-xs text-surface-600">{tech}</span>
-                      ))}
+                  <Card hover padding="none" className="flex h-full flex-col overflow-hidden">
+                    <div className="relative aspect-video w-full overflow-hidden border-b border-surface-100">
+                      <img src={item.image} alt={item.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    </div>
+                    <div className="flex flex-col flex-grow p-6 md:p-8">
+                      <span className="mb-3 w-fit rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-600">{item.industry}</span>
+                      <h2 className="font-display mb-2 text-xl font-semibold text-surface-900">{item.title}</h2>
+                      <p className="mb-4 flex-grow text-sm text-surface-500">{item.challenge}</p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {item.technologies.slice(0, 4).map((tech) => (
+                          <span key={tech} className="rounded bg-surface-100 px-2 py-0.5 text-xs text-surface-600">{tech}</span>
+                        ))}
+                      </div>
                     </div>
                   </Card>
                 </Link>

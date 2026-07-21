@@ -6,10 +6,11 @@ interface CardProps {
   className?: string;
   hover?: boolean;
   glass?: boolean;
-  padding?: 'sm' | 'md' | 'lg';
+  padding?: 'none' | 'sm' | 'md' | 'lg';
 }
 
 const paddingMap = {
+  none: 'p-0',
   sm: 'p-5',
   md: 'p-6 md:p-8',
   lg: 'p-8 md:p-10',
