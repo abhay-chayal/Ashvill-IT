@@ -140,7 +140,7 @@ export const caseStudies: CaseStudy[] = [
       'Won two major enterprise contracts due to the new technological capabilities'
     ],
     technologies: ['React', 'Node.js', 'MongoDB', 'AWS IoT', 'Python', 'WebSockets'],
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8ed7c663c0?auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&q=80',
     testimonial: {
       quote: "The visibility this platform provides is incredible. We can now proactively alert our clients to weather delays before they even ask. It's a massive competitive advantage.",
       author: "James Thorne",
