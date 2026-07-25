@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { PageLayout, PageHero, CTASection } from '@/components/layout/PageLayout';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { Card } from '@/components/ui/Card';
@@ -25,7 +26,7 @@ export default function PortfolioPage() {
                 <Link href={`/case-studies/${item.slug}`} className="block h-full">
                   <Card hover padding="none" className="flex h-full flex-col overflow-hidden">
                     <div className="relative aspect-video w-full overflow-hidden border-b border-surface-100">
-                      <img src={item.image} alt={item.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                      <Image src={item.image} alt={item.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
                     </div>
                     <div className="flex flex-col flex-grow p-6 md:p-8">
                       <span className="mb-3 w-fit rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-600">{item.industry}</span>

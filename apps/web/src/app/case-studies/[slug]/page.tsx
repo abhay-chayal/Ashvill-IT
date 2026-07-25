@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { CheckCircle2, Quote } from 'lucide-react';
 import { PageLayout, PageHero, CTASection } from '@/components/layout/PageLayout';
@@ -35,11 +36,14 @@ export default async function CaseStudyDetailPage({ params }: Props) {
           <div className="mt-8 grid gap-16 lg:grid-cols-3">
             <div className="lg:col-span-2 space-y-12">
               <FadeIn>
-                <img 
-                  src={study.image} 
-                  alt={study.title} 
-                  className="w-full aspect-[2/1] object-cover rounded-2xl shadow-sm mb-12"
-                />
+                <div className="relative w-full aspect-[2/1] overflow-hidden rounded-2xl shadow-sm mb-12">
+                  <Image 
+                    src={study.image} 
+                    alt={study.title} 
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 
                 <h2 className="font-display mb-6 text-3xl font-bold text-surface-900">Executive Summary</h2>
                 <p className="text-lg leading-relaxed text-surface-600 mb-12">{study.executiveSummary}</p>

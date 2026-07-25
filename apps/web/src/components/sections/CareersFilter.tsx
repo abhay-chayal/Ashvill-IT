@@ -255,7 +255,7 @@ export function CareersFilter({ jobs }: CareersFilterProps) {
           </div>
           <h3 className="font-display text-lg font-bold text-surface-900">No positions match your filters</h3>
           <p className="text-sm text-surface-500 max-w-md mx-auto">
-            We couldn't find any openings matching your search criteria. Try resetting your search filters or check back soon.
+            We could not find any openings matching your search criteria. Try resetting your search filters or check back soon.
           </p>
           <button
             type="button"
