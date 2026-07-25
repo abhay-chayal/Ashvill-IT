@@ -1,51 +1,39 @@
-import Link from 'next/link';
-import { MapPin, Clock, ArrowRight } from 'lucide-react';
 import { PageLayout, PageHero, CTASection } from '@/components/layout/PageLayout';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
-import { Card } from '@/components/ui/Card';
-import { StaggerContainer, StaggerItem } from '@/components/ui/Motion';
+import { CareersFilter } from '@/components/sections/CareersFilter';
 import { jobListings } from '@/content/careers';
 import { createMetadata } from '@/lib/seo';
 
 export const metadata = createMetadata({
   title: 'Careers',
-  description: 'Join Ashvill IT Solutions — build enterprise technology with a team of passionate engineers and designers.',
+  description: 'Join Ashvill IT Solutions — build enterprise technology, lead strategic initiatives, and innovate with a world-class team of engineers, product managers, and leaders.',
   path: '/careers',
 });
 
 export default function CareersPage() {
   return (
     <PageLayout>
-      <PageHero pattern eyebrow="Careers" title="Build the Future With Us" description="Join a team of 45+ passionate technologists delivering transformative solutions for global enterprises." />
-      <section className="py-12 md:py-11">
+      <PageHero
+        pattern
+        eyebrow="Careers & Leadership"
+        title="Shape the Future of Enterprise Technology"
+        description="We are hiring top-tier talent across both Technical Engineering and Management & Leadership. Explore our open positions and build high-impact solutions with global reach."
+      />
+      <section className="py-12 md:py-16">
         <div className="container-wide">
-          <Breadcrumbs items={[{ label: 'Careers' }]} />
-          <StaggerContainer className="space-y-4">
-            {jobListings.map((job) => (
-              <StaggerItem key={job.slug}>
-                <Link href={`/careers/${job.slug}`} className="block">
-                  <Card hover>
-                    <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                      <div>
-                        <h2 className="font-display text-xl font-semibold text-surface-900">{job.title}</h2>
-                        <div className="mt-2 flex flex-wrap gap-4 text-sm text-surface-500">
-                          <span className="flex items-center gap-1"><MapPin className="h-4 w-4" />{job.location}</span>
-                          <span className="flex items-center gap-1"><Clock className="h-4 w-4" />{job.type}</span>
-                          <span>{job.department}</span>
-                        </div>
-                      </div>
-                      <span className="inline-flex items-center gap-1 text-sm font-semibold text-brand-600">
-                        View role <ArrowRight className="h-4 w-4" />
-                      </span>
-                    </div>
-                  </Card>
-                </Link>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
+          <div className="mb-8">
+            <Breadcrumbs items={[{ label: 'Careers' }]} />
+          </div>
+          <CareersFilter jobs={jobListings} />
         </div>
       </section>
-      <CTASection title="Don't See Your Role?" description="Send us your resume — we're always looking for exceptional talent." primaryLabel="Contact HR" primaryHref="/contact" />
+      <CTASection
+        title="Don't See Your Specific Role?"
+        description="We are always seeking visionaries, engineering leads, and technical innovators. Send us your profile and let's explore opportunities together."
+        primaryLabel="Contact Talent Team"
+        primaryHref="/contact"
+      />
     </PageLayout>
   );
 }
+
