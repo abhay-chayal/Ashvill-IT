@@ -21,25 +21,26 @@ export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-[#F9F8F6] border-b border-surface-200 shadow-sm transition-all duration-300">
       <div className="w-full">
-        <nav className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4" aria-label="Main navigation">
+        <nav className="mx-auto flex w-full max-w-7xl items-center justify-between px-3 sm:px-6 py-3.5 sm:py-4" aria-label="Main navigation">
           
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-2 sm:gap-6 min-w-0">
             <button
-              className="rounded-lg p-2 text-surface-700 hover:bg-surface-200 transition-colors"
+              className="rounded-lg p-1.5 sm:p-2 text-surface-700 hover:bg-surface-200 transition-colors shrink-0"
               onClick={() => setMobileOpen(true)}
               aria-label="Open menu"
             >
-              <Menu className="h-6 w-6" />
+              <Menu className="h-5 w-5 sm:h-6 sm:w-6" />
             </button>
             <Logo variant="default" />
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             <Button href="/request-quote" variant="outline" size="sm" className="hidden lg:flex border-surface-300 text-surface-700 hover:bg-surface-50">
               Request Quote
             </Button>
-            <Button href="/contact" size="sm" className="border-none" rightIcon={<ArrowRight className="h-4 w-4" />}>
-              Contact Sales
+            <Button href="/contact" size="sm" className="border-none whitespace-nowrap text-xs sm:text-sm px-3 sm:px-4 py-2" rightIcon={<ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />}>
+              <span className="hidden sm:inline">Contact Sales</span>
+              <span className="sm:hidden">Contact</span>
             </Button>
           </div>
         </nav>
@@ -59,14 +60,14 @@ export function Header() {
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
               transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-              className="absolute left-0 top-0 h-full w-full max-w-md bg-[#F9F8F6] p-8 shadow-2xl flex flex-col"
+              className="absolute left-0 top-0 h-full w-full max-w-md bg-[#F9F8F6] p-6 sm:p-8 shadow-2xl flex flex-col"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="mb-12 flex items-center gap-6">
+              <div className="mb-8 sm:mb-12 flex items-center justify-between">
+                <Logo />
                 <button onClick={() => setMobileOpen(false)} aria-label="Close menu" className="rounded-lg p-2 text-surface-700 hover:bg-surface-200 transition-colors">
                   <X className="h-6 w-6" />
                 </button>
-                <Logo />
               </div>
               
               <div className="flex-1 overflow-y-auto">
