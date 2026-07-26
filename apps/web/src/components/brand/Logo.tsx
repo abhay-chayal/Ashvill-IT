@@ -15,19 +15,19 @@ export function Logo({ className, variant = 'default', showText = true }: LogoPr
   return (
     <Link href="/" className={cn('group flex items-center gap-3.5', className)} aria-label={company.name}>
       <div className="flex items-center gap-3.5 transition-transform duration-300 group-hover:scale-[1.02]">
-        {/* Exact User GPT-Generated Logo Mark Asset */}
+        {/* Responsive Logo Mark Asset (Dark Charcoal for Header, Crisp White for Footer) */}
         <div className="relative flex items-center justify-center shrink-0">
           <Image
-            src="/logo-mark.png"
+            src={isLight ? '/logo-mark-light.png' : '/logo-mark.png'}
             alt="Ashvill Logo Icon"
             width={40}
-            height={42}
-            className="h-10 w-auto object-contain"
+            height={40}
+            className="h-10 w-auto object-contain transition-all"
             priority
           />
         </div>
 
-        {/* Wordmark Typography */}
+        {/* Polished Wordmark Typography */}
         {showText && (
           <div className="flex flex-col justify-center leading-none">
             <span
