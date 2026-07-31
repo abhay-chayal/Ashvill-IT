@@ -1,51 +1,74 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { company } from '@/config/company';
+import { LogoIcon } from './LogoIcon';
 import { cn } from '@/lib/utils';
 
 interface LogoProps {
   className?: string;
   variant?: 'default' | 'light';
   showText?: boolean;
+  tagline?: string;
+  showTagline?: boolean;
+  styleVariant?: 'clean' | 'muted';
 }
 
-export function Logo({ className, variant = 'default', showText = true }: LogoProps) {
+export function Logo({
+  className,
+  variant = 'default',
+  showText = true,
+  tagline = 'ENGINEERING EXCELLENCE',
+  showTagline = true,
+  styleVariant = 'clean',
+}: LogoProps) {
   const isLight = variant === 'light';
 
-  return (
-    <Link href="/" className={cn('group flex items-center gap-2.5 sm:gap-3.5 shrink-0', className)} aria-label={company.name}>
-      <div className="flex items-center gap-2.5 sm:gap-3.5 transition-transform duration-300 group-hover:scale-[1.02]">
-        {/* Responsive Logo Mark Asset */}
-        <div className="relative flex items-center justify-center shrink-0">
-          <Image
-            src={isLight ? '/logo-mark-light.png' : '/logo-mark.png'}
-            alt="Ashvill Logo Icon"
-            width={40}
-            height={40}
-            className="h-8 sm:h-10 w-auto object-contain transition-all"
-            priority
-          />
-        </div>
+  // Prepare characters for sub-pixel flex justification across the exact top-row width
+  const taglineChars = tagline.split('');
 
-        {/* Polished Wordmark Typography */}
-        {showText && (
-          <div className="flex flex-col justify-center leading-none">
+  return (
+    <Link
+      href="/"
+      className={cn('group inline-flex items-center shrink-0 select-none transition-all', className)}
+      aria-label={company.name}
+    >
+      <div className="inline-flex flex-col items-stretch transition-transform duration-300 group-hover:scale-[1.015]">
+        {/* Top Row: Logo Mark Icon + ASHVILL Wordmark (Vertically centered) */}
+        <div className="flex items-center gap-2.5 sm:gap-3">
+          <LogoIcon variant={variant} size={36} className="h-7 sm:h-8.5 w-auto shrink-0" />
+
+          {showText && (
             <span
               className={cn(
-                'font-display text-[18px] sm:text-[22px] font-extrabold tracking-[0.12em] uppercase leading-none',
+                'font-display text-[18px] sm:text-[21px] font-black tracking-[0.14em] uppercase leading-none self-center pt-0.5',
                 isLight ? 'text-white' : 'text-surface-950'
               )}
             >
               ASHVILL
             </span>
-            <span
-              className={cn(
-                'text-[8px] sm:text-[9.5px] font-bold tracking-[0.24em] uppercase mt-0.5 sm:mt-1 leading-none',
-                isLight ? 'text-brand-400' : 'text-brand-600'
-              )}
-            >
-              IT SOLUTIONS
-            </span>
+          )}
+        </div>
+
+        {/* Bottom Row: Sub-pixel Justified Tagline spanning perfectly flush from left to right */}
+        {showText && showTagline && tagline && (
+          <div className="w-full mt-1.5 sm:mt-2 flex items-center justify-between select-none">
+            {taglineChars.map((char, index) => (
+              <span
+                key={index}
+                className={cn(
+                  'text-[7px] sm:text-[7.5px] font-bold uppercase leading-none transition-colors',
+                  char === ' ' ? 'w-1 sm:w-1.5' : '',
+                  styleVariant === 'muted'
+                    ? isLight
+                      ? 'text-surface-400 group-hover:text-surface-300'
+                      : 'text-surface-500 group-hover:text-surface-700'
+                    : isLight
+                    ? 'text-brand-400 group-hover:text-brand-300'
+                    : 'text-brand-600 group-hover:text-brand-700'
+                )}
+              >
+                {char === ' ' ? '\u00A0' : char}
+              </span>
+            ))}
           </div>
         )}
       </div>
