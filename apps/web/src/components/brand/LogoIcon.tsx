@@ -17,7 +17,7 @@ export function LogoIcon({ className, variant = 'default', size = 40 }: LogoIcon
         alt="Ashvill Logo Mark"
         width={size}
         height={size}
-        className="h-auto w-auto object-contain transition-all duration-300"
+        className="h-full max-h-full w-auto object-contain transition-all duration-300"
         priority
       />
     </div>

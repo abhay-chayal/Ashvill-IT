@@ -22,8 +22,8 @@ export function Logo({
 }: LogoProps) {
   const isLight = variant === 'light';
 
-  // Prepare characters for sub-pixel flex justification across the exact top-row width
-  const taglineChars = tagline.split('');
+  // Split tagline into individual words for proportional word-gap & letter distribution
+  const taglineWords = tagline ? tagline.split(' ') : [];
 
   return (
     <Link
@@ -39,7 +39,7 @@ export function Logo({
           {showText && (
             <span
               className={cn(
-                'font-display text-[18px] sm:text-[21px] font-black tracking-[0.14em] uppercase leading-none self-center pt-0.5',
+                'font-display text-[17.5px] sm:text-[21px] font-black tracking-[0.14em] uppercase leading-none self-center',
                 isLight ? 'text-white' : 'text-surface-950'
               )}
             >
@@ -48,26 +48,32 @@ export function Logo({
           )}
         </div>
 
-        {/* Bottom Row: Sub-pixel Justified Tagline spanning perfectly flush from left to right */}
+        {/* Bottom Row: Proportional Justified Tagline spanning perfectly flush from left to right */}
         {showText && showTagline && tagline && (
-          <div className="w-full mt-1.5 sm:mt-2 flex items-center justify-between select-none">
-            {taglineChars.map((char, index) => (
-              <span
-                key={index}
-                className={cn(
-                  'text-[7px] sm:text-[7.5px] font-bold uppercase leading-none transition-colors',
-                  char === ' ' ? 'w-1 sm:w-1.5' : '',
-                  styleVariant === 'muted'
-                    ? isLight
-                      ? 'text-surface-400 group-hover:text-surface-300'
-                      : 'text-surface-500 group-hover:text-surface-700'
-                    : isLight
-                    ? 'text-brand-400 group-hover:text-brand-300'
-                    : 'text-brand-600 group-hover:text-brand-700'
-                )}
-              >
-                {char === ' ' ? '\u00A0' : char}
-              </span>
+          <div className="w-full mt-2 sm:mt-2.5 flex items-center justify-between select-none">
+            {taglineWords.map((word, wordIdx) => (
+              <div key={wordIdx} className="contents">
+                {wordIdx > 0 && <span className="w-2.5 sm:w-3 shrink-0" />}
+                <div className="flex items-center justify-between flex-1 min-w-0">
+                  {word.split('').map((char, charIdx) => (
+                    <span
+                      key={charIdx}
+                      className={cn(
+                        'text-[6.25px] sm:text-[7.5px] font-bold uppercase leading-none transition-colors',
+                        styleVariant === 'muted'
+                          ? isLight
+                            ? 'text-surface-400 group-hover:text-surface-300'
+                            : 'text-surface-500 group-hover:text-surface-700'
+                          : isLight
+                          ? 'text-brand-400 group-hover:text-brand-300'
+                          : 'text-brand-600 group-hover:text-brand-700'
+                      )}
+                    >
+                      {char}
+                    </span>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         )}
